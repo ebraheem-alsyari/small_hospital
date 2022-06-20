@@ -45,6 +45,7 @@ class DetailsController < ApplicationController
       details = Details.find(params[:id]).destroy
       if @details.destroy_attributes
         render('index')
+        
       end
     end
 
