@@ -1,0 +1,17 @@
+<div class="pages delete">
+  <h2>Delete delete</h2>
+
+  <center><%= link_to('Back to List', {:action => 'index'}, :class => 'back-link') %></center>
+  <%= form_for(@detail, :method => 'delete') do |f| %>
+  <p>Are you sure you want to permanently delete this page?</p>
+  
+  <p class="reference-name"><%= f.object.name %></p>
+
+    <div class="form-buttons">
+      <%= f.submit("Delete detail") %>
+    </div>
+
+  <% end %>
+</div>
+
+

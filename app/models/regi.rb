@@ -1,0 +1,2 @@
+class Regi < ApplicationRecord
+end

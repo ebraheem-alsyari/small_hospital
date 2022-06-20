@@ -1,0 +1,18 @@
+<% @page_title = 'New Detail' %>
+
+<center><%= link_to('Back to List', {:action => 'index'}, :class => 'back-link') %></center>
+
+<center><div class="details new"></center>
+  <center><h2>Create Detail</h2></center>
+
+  <%= form_for(:detail, :url => {:action => 'destroy', :id => @detail.id}) do |f| %>
+
+      <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+        <div type="button" class="btn btn-outline-primary">Primary</div>
+        <%= submit_tag('Create Detail') %>
+        
+      </div>
+      
+      <% end %>
+    </div>

@@ -1,0 +1,43 @@
+<center><%= link_to("new", new_detail_url(@details), :class => 'action new') %></center>
+    <div class="detail index">
+      <center><table class="listing" summary="Subject list"></center>
+        <h2>Detail</h2>
+      <tr class="header">
+        <th>Name</th>
+        <th>Age</th>
+        <th>phone_number</th>
+        <th>description</th>
+        <th>Create at</th>
+        
+      </tr>
+      <% @details.each do |detail| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= detail.name %></td>
+        <td><%= detail.age %></td>
+        <td><%= detail.phone_number %></td>
+        <td><%= detail.description %></td>
+        <td><%= detail.created_at %></td>
+
+
+            <td class="actions">
+              <%= link_to("Edit", edit_detail_url(detail), :class => 'action edite') %>
+              <%= link_to("De", delete_detail_url(detail), :class => 'action delete') %>
+
+    
+            </td>
+          </tr>
+      <% end %>
+    </table>
+  
+    <br>
+  
+   <%#= link_to('Home', {:controller => 'access'}, :class => 'back-link') %>
+  
+  </div>
+  
+
+
+
+
+
+  
