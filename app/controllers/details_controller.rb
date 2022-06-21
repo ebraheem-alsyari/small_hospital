@@ -43,10 +43,8 @@ class DetailsController < ApplicationController
 
     def destroy
       details = Details.find(params[:id]).destroy
-      if @details.destroy_attributes
-        render('index')
-        
-      end
+      redirect_to(:action => 'index')
+  
     end
 
 

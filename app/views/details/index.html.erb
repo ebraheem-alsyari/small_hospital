@@ -21,7 +21,7 @@
 
             <td class="actions">
               <%= link_to("Edit", edit_detail_url(detail), :class => 'action edite') %>
-              <%= link_to("De", delete_detail_url(detail), :class => 'action delete') %>
+              <%= link_to("Delete", delete_detail_url(detail), :confirm => "Are you sure?", :method => :delete) %>
 
     
             </td>

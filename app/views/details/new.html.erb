@@ -5,7 +5,7 @@
 <center><div class="details new"></center>
   <center><h2>Create Detail</h2></center>
 
-  <%= form_for(:detail, :url => {:action => 'destroy', :id => @detail.id}) do |f| %>
+  <%= form_for(:section, :url => {:action => 'create'}) do |f| %>
 
       <%= render(:partial => 'form', :locals => {:f => f}) %>
 
