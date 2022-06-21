@@ -2,7 +2,9 @@
   <h2>Delete delete</h2>
 
   <center><%= link_to('Back to List', {:action => 'index'}, :class => 'back-link') %></center>
-  <%= form_for Detail.new do |f| %>
+
+  <%= form_for(@detail, :mehtod => 'delete') do |f| %>
+ 
   <p>Are you sure you want to permanently delete this page?</p>
   
   <p class="reference-name"><%= f.object.name %></p>

@@ -2,6 +2,8 @@ class DetailsController < ApplicationController
 
 
   layout 'application'
+
+
     def index
       @details = Detail.all
     end
@@ -15,7 +17,7 @@ class DetailsController < ApplicationController
     end
 
     def create
-      @details = Detail.new(detail_params)
+      @details = Detail.new(params[:name])
       if @details.save
         flash[:notice] = "Details saved successfully"
         redirect_to(details_path)
@@ -42,13 +44,12 @@ class DetailsController < ApplicationController
     end
 
     def destroy
-      details = Details.find(params[:id]).destroy
+      @details.destroy
       redirect_to(:action => 'index')
-  
     end
 
 
     def detail_params
-      params.require(:detail).permit(:name, :age, :phone_number, :description)
+      params.require(:detail).permit(:created_at, :updated_at)
     end
 end
