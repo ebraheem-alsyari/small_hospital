@@ -1,12 +1,15 @@
 class CreateDetails < ActiveRecord::Migration[6.1]
-  def change
+  def up
     create_table :details do |t|
-      t.integer "dtails_id"
       t.string "name"
       t.integer "age"
+      t.text "description"
       t.integer "phone_number"
-      t.string "description"
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :details
   end
 end

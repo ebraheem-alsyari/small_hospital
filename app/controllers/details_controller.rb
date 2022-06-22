@@ -17,7 +17,7 @@ class DetailsController < ApplicationController
     end
 
     def create
-      @details = Detail.new(params[:name])
+      @details = Detail.new(detail_params)
       if @details.save
         flash[:notice] = "Details saved successfully"
         redirect_to(details_path)
@@ -50,6 +50,6 @@ class DetailsController < ApplicationController
 
 
     def detail_params
-      params.require(:detail).permit(:created_at, :updated_at)
+      params.require(:detail).permit(:name, :age, :description, :phone_number)
     end
 end
