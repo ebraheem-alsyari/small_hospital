@@ -1,0 +1,4 @@
+class DoctorName < ApplicationRecord
+
+
+end

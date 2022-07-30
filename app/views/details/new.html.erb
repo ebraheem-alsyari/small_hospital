@@ -1,40 +1,37 @@
 <% @page_title = 'New Detail' %>
 
-<center><%= link_to('Back to List', {:action => 'index'}, :class => 'back-link') %></center>
+<center><%= link_to('Back to List', {:action => 'index'}, :class => 'back-link') %>
 
-<center><div class="details new"></center>
-  <center><h2>Create Detail</h2></center>
+<div class="details new">
+  <h1>Create Detail</h1>
 
-  <%= form_for(@detail, :url => new_detail_path, :method => 'created') do |f| %>
+  <%= form_for(:details, :url => {:action => 'create'}) do |f| %>
 
 
-      <center><table summary="Subject form fields"></center>
+      <table summary="Subject form fields">
         <tr>
-          <th><%= f.label(:name, 'Name')%></th>
-          <td><%= f.text_field(:name) %></td>
+          <th><%= f.label(:name, 'name')%></th>
+          <td><%= f.text_field(:name, class: "form-control")%></td>
         </tr>
         <tr>
           <th><%= f.label(:age, 'Age')%></th>
-          <td><%= f.number_field(:age) %></td>
+          <td><%= f.number_field(:age, class: "form-control") %></td>
         </tr>
         <tr>
           <th><%= f.label(:description, 'Description')%></th>
-          <td><%= f.text_area(:content, :size => '25x2') %></td>
+          <td><%= f.text_area(:description, :size => '25x2', class: "form-control") %></td>
         </tr>
         <tr>
           <th><%= f.label(:phone_number, 'Phone_number')%></th>
-          <td><%= f.number_field(:phone_number) %></td>
-        </tr>
-        <tr>
-          <th><%= f.label(:created_at)%></th>
-          <td><%= f.datetime_select(:created_at => [:month, :day, :year]) %></td>
+          <td><%= f.number_field(:phone_number, class: "form-control") %></td>
         </tr>
         </tr>
       </table>
-        <div type="button" class="btn btn-outline-primary">Primary</div>
-        <%= submit_tag('Create Detail') %>
-        
+
+        <button class="btn btn-outline-success" type="submit">Create Detail</button>
+
       </div>
       
       <% end %>
     </div>
+    

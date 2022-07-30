@@ -1,18 +1,18 @@
 <div class="detail delete">
-  <h2>Delete delete</h2>
-
+  <center><h2>Delete delete</h2>
+  </center>
   <center><%= link_to('Back to List', {:action => 'index'}, :class => 'back-link') %></center>
 
-  <%= form_for(@detail, :mehtod => 'delete') do |f| %>
+  <%= form_for(@details, :mehtod => 'delete') do |f| %>
  
-  <p>Are you sure you want to permanently delete this page?</p>
-  
-  <p class="reference-name"><%= f.object.name %></p>
+  <center><p>Are you sure you want to permanently delete this page?</p></center>
 
-    <div class="form-buttons">
-      <%= f.submit("Delete detail") %>
+
+   <center><p class="reference-name"><%= f.object.name %></p></center>
+
+   <center><div class="form-buttons"></center>
+    <center><%= f.submit("Delete Subject") %></center>
     </div>
-
   <% end %>
 </div>
 

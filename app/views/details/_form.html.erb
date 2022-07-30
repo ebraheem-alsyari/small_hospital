@@ -10,15 +10,15 @@
   </tr>
   <tr>
     <th><%= f.label(:description, 'Description')%></th>
-    <td><%= f.text_area(:content, :size => '25x2') %></td>
+    <td><%= f.text_area(:description, :size => '25x2') %></td>
   </tr>
   <tr>
     <th><%= f.label(:phone_number, 'Phone_number')%></th>
-    <td><%= f.number_field(:phone_number) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:created_at)%></th>
-    <td><%= f.datetime_select(:created_at => [:month, :day, :year]) %></td>
+    <td><%= f.number_field(:phone_number ) %></td>
   </tr>
   </tr>
 </table>
+</div>
+  <div class="form-buttons">
+    <center><%= f.submit("Update Page") %></center>
+<div>

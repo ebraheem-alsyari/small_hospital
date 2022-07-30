@@ -1,6 +1,6 @@
 require "test_helper"
 
-class RegiTest < ActiveSupport::TestCase
+class DoctorNameTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

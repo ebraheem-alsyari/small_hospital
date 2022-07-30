@@ -1,2 +1,0 @@
-class Regi < ApplicationRecord
-end

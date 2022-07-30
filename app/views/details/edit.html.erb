@@ -1,0 +1,14 @@
+
+<center><%= link_to('Back to List', {:action => 'index'}, :class => 'back-link') %></center>
+<div class="Detail edit">
+  <h2>Update Detail</h2>
+
+  <%= form_for(@detail, :url => details_path(@detail)) do |f| %>
+
+<%= render(:partial => 'form', :locals => {:f => f}) %>
+
+
+
+  <% end %>
+</div>
+
