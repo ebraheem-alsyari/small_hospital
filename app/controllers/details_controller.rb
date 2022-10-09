@@ -7,7 +7,9 @@ class DetailsController < ApplicationController
 
     def index
       
-    
+   self.search
+      @details = Detail.all
+   
       
     
       # @details = Detail.search(:search)
