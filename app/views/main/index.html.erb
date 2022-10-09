@@ -1,0 +1,33 @@
+  <body>
+  </body>
+  <!-- <div class="alert alert-danger" > -->
+<div class="d-flex align-items-conter justify-content-conter">
+  <h5>Welcome To our Hospital<h5>
+</div>
+    <% if @user %>
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+      </div>
+      <div class="alert alert-primary" role="alert">
+        <% if @user %>
+        Logged in as: <a href="<%= @user.email %>" class="alert-link"><%= @user.email %></a>. Give it a click if you like.
+        <% end %>
+      </div>
+    <% end %>
+    <% @page_title = "Admin Menu" %>
+  <div class="menu">
+      <center><h2>Admin Menu</h2></center>
+      <center><div class="identity">Logged in as:</div></center>
+    <ul>
+      <body>
+      </body>
+      <center><li><%= link_to("New pationt", new_detail_url,method: :new ) %></li></center>
+      <center><li><%= link_to("Sign In", sign_in_url) %></li></center>
+      <center><li><%= link_to("Info about pationts ",details_url ) %></li></center>
+   </ul>
+  </div class="container">
+</div>
+

@@ -1,20 +1,27 @@
 class DetailsController < ApplicationController
-  # before_action :authenticate_user!
-  before_action :set_id, only: [:show, :edit, :update, :destroy ]
-  # before_action :set_id, only: %i[ show edit update destroy ]
+  before_action :confirm_logged_in
+  before_action :set_id, only: [:index ]
 
   layout 'application'
 
-    $count = 0
+
     def index
       
-      @details = Detail.where('created_at IS NULL OR created_at > ?', Time.now)
-      @details = Detail.where('created_at <= ?', Time.now)
-      @details = Detail.all
+    
+      
+    
+      # @details = Detail.search(:search)
+      
+
     end
 
+    def search
+      @detail = Detail.search(params[:search])
+    end
+
+
     def show
-      @details = Detail.first
+      @details = Detail.all
     end
 
     def new
@@ -22,12 +29,13 @@ class DetailsController < ApplicationController
     end
 
     def create
+      
       @details = Detail.new(detail_params)
       if @details.save
-        $count =+ 1
         flash[:notice] = "Details saved successfully"
         redirect_to(details_path)
       else
+        flash[:notice] = "Write name first"
         render('new')
       end
     end
@@ -69,12 +77,26 @@ class DetailsController < ApplicationController
     end
 
     private
+    def search
+     
+    end
+
     def set_id
-      @details = Detail.find(params[:id])
+      @details = Detail.all
+      @details = Detail.find_by(params[:id])
+    end
+
+    def authenticate_with_http_digest
+
+      if @user.present? && @user.authenticate(params[:password])
+        flash[:notice] = "Welcome to our Hospital"
+        redirect_to sign_in_path
+      else
+      end
     end
 
 
     def detail_params
       params.require(:details).permit(:name, :age, :description, :phone_number)
     end
-end
+  end

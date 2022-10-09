@@ -1,0 +1,9 @@
+
+
+<body>
+  <h4>Search about anyone</h4>
+  <%= form_tag details_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search], class: "form-control me-2" %>
+    <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
+  <% end %>
+</body>

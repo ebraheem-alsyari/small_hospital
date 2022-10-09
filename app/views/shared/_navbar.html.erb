@@ -8,20 +8,38 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/home_page">Home</a>
+          <a class="nav-link active" aria-current="page" href="/Go">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:3000/details/new.%23%3CDetail::ActiveRecord_Relation:0x00007f3d14585108%3E">New faild</a>
         </li>
         <li class="nav-item dropdown">
-
           </ul>
+          
+          
+          <% if @user %>
+          <div class="fw-bold" >
+
+
+
+          Logged in as: <%= @user.email %>
+          </div>
+          <% end %>
+          
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <% if @user %>
+            <%= button_to "Logout", logout_url, method: :delete %>
+            <% else %>
+            <% link_to "Login", sign_in_path %>
+            <% end %>
+          </ul>
+
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-        <a class="btn btn-outline-success", class="nav-link active" aria-current="page" href="/sign_up">Sign_up</a>
+        <a class="btn btn-outline-success", class="nav-link active" aria-current="page" href="/sign_up">Sign_up</a> -->
 
       </form>
       <form>
@@ -35,4 +53,3 @@
     </div>
   </div>
 </nav>
-
